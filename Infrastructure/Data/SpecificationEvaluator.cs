@@ -23,6 +23,10 @@ namespace Infrastructure.Data
             {
                 query = query.Distinct();
             }
+            if (spec.IsPagingEnable == true)
+            {
+                query = query.Skip(spec.Skip).Take(spec.Take);
+            }
             return query;
         }
         public static IQueryable<TResult> GetQuery<TSpec, TResult>(IQueryable<T> query, ISpecification<T, TResult> spec)
@@ -48,6 +52,10 @@ namespace Infrastructure.Data
             if (spec.IsDistinct)
             {
                 selectQuery = selectQuery?.Distinct();
+            }
+            if (spec.IsPagingEnable == true)
+            {
+                selectQuery = selectQuery?.Skip(spec.Skip).Take(spec.Take);
             }
             return selectQuery ?? query.Cast<TResult>();
         }
