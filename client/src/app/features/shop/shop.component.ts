@@ -1,7 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ShopService } from '../../core/services/shop.service';
-import { Product } from '../../shared/Models/product';
-import { MatCard } from '@angular/material/card';
+import { Product } from '../../shared/models/product';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { MatDialog } from '@angular/material/dialog';
 import { FiltersDialogComponent } from './filters-dialog/filters-dialog.component';
@@ -9,15 +8,14 @@ import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
 import { MatListOption, MatSelectionList, MatSelectionListChange } from '@angular/material/list';
-import { ShopParams } from '../../shared/Models/shopParams';
+import { ShopParams } from '../../shared/models/shopParams';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
-import { Pagination } from '../../shared/Models/pagination';
+import { Pagination } from '../../shared/models/pagination';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-shop',
   imports: [
-    MatCard,
     ProductItemComponent,
     MatButton,
     MatIcon,
